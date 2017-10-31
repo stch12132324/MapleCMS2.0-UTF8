@@ -29,7 +29,8 @@ class App{
     private static function _makeRun( $_group , $_module , $_action , $_module_name , $_module_file ){
         // 语言包
 		self::_initLang();
-        $controler = '\App\Controller\\'.$_module_name;
+        $Group = $_group == '' ? '' : '\\'.$_group;
+        $controler = '\App\Controller'.$Group.'\\'.$_module_name;
 		$act = new $controler;
 		if( method_exists($act,$_action) ){
             self::_initRun($act, $_group, $_module, $_action);

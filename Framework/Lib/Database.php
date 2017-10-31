@@ -6,7 +6,7 @@ class Database extends DbMysqli{
      * @param $pagesize
      * @return array|bool|object
      */
-    public function paginate($pagesize){
+    public function paginate($pagesize = 15){
         $page  = abs(intval($_GET['page']));
         $start = $page == 0 ? 0 : ( $page - 1 ) * $pagesize;
         $limit = $start.",".$pagesize;
