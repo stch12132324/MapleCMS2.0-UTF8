@@ -217,7 +217,7 @@ class DbMysqli{
         }
     }
 //------------------插入-----------------------------
-    public function insert(&$data = ''){
+    public function insert($data = ''){
         if(is_array($data)){
             foreach($data as $key=>$val){
                 $keys[] = $key;
